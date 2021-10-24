@@ -1,0 +1,406 @@
+\documentclass[a4paper]{article}
+\usepackage{varioref}
+%%\usepackage{placeins}
+\usepackage{float}
+\usepackage{multirow,tabularx}
+%%Edycja czcionki
+%\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=1cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+
+%%Początek dokumentu
+\begin{document}
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+%%Początek stony tytułowej
+\begin{titlepage}
+    \centering
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{LOGO.jpg}
+	\end{figure}
+    \vspace*{0.5cm}
+    \huge\bfseries
+    Laboratory report \\Markov Models \\Laboratory 2 \\
+    \vspace*{0.1cm}
+    \vspace*{0.5cm}
+    \vspace*{0.5cm}
+    \vspace*{1cm}
+    \large Radosław Milenkowicz\\
+
+    \vspace*{\fill}
+    \large Gliwice 13.10.2021 \\
+\end{titlepage}
+\newpage
+
+
+\section{Task 1}
+\subsection{Analysing graphs.}
+\begin{enumerate}
+    \item As could be predicted based on state matrix and observed on graphs of state transitions: the  state prefers to stay in state 3 and barely any time jumps to state 1 or state 2. State 1 has really low chance to stay in the state 1 or to jump state 2, State 2 has "alike" state transition probabilities, although bit larger.
+    \item Starting from state 2 follows the same fate as starting from state 1 since transition matrix is the same and the probability of transitioning to state 3 still dominates the state transitions.
+\end{enumerate}
+\subsection{Data Visualisation for state no.1 = 1}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_a_Figure_1.png}
+\caption{\label{fig:table}First simulation.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_a_Figure_2.png}
+\caption{\label{fig:table}Second simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_a_Figure_3.png}
+\caption{\label{fig:table}Third simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_a_Figure_4.png}
+\caption{\label{fig:table}Fourth simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_a_Figure_5.png}
+\caption{\label{fig:table}Fifth simulation.}
+\end{figure}
+
+\subsection{Data Visualisation state for no.1 = 2}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_b_Figure_1.png}
+\caption{\label{fig:table}First simulation.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_b_Figure_2.png}
+\caption{\label{fig:table}Second simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_b_Figure_3.png}
+\caption{\label{fig:table}Third simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_b_Figure_4.png}
+\caption{\label{fig:table}Fourth simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T1_b_Figure_5.png}
+\caption{\label{fig:table}Fifth simulation.}
+\end{figure}
+
+\newpage 
+\section{Task 2}
+\subsection{Task 2: A}
+
+Inital state: state = [[7400000 ,  8370000 ,  7900000]] \\
+Transition state matrix: \\
+1:[0.03, 0.07, 0.9], \\
+2:[0.15, 0.15, 0.70], \\
+3:[0.25, 0.20, 0.55]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_a_Figure_1.png}
+\caption{\label{fig:table}Twelve month simulation.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_a_Figure_2.png}
+\caption{\label{fig:table}First month.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_a_Figure_3.png}
+\caption{\label{fig:table}Sixth Month.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_a_Figure_4.png}
+\caption{\label{fig:table}After a year.}
+\end{figure}
+\newpage
+\section{Task 2b)}
+Inital state: state = [[7400000 ,  8370000 ,  7900000]] \\
+Transition state matrix: \\
+I must refer to my appendix A: state\_transition\_b(\_b1 \_b2 \_b3)
+are described there.
+\subsection{Simulation}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_b_Figure_1.png}
+\caption{\label{fig:table}Twelve month simulation.}
+\end{figure}
+
+\subsection{Bar charts}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_a_Figure_2.png}
+\caption{\label{fig:table}First month.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_b_Figure_2.png}
+\caption{\label{fig:table}After 6 months.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{T2_b_Figure_3.png}
+\caption{\label{fig:table}After a year.}
+\end{figure}
+\newpage 
+\section{Appendix A: Code listening}
+
+\begin{lstlisting}
+
+def state_transition_row_a(state):
+    transition_row_a={
+        1:[0.03, 0.07, 0.9],
+        2:[0.15, 0.15, 0.70],
+        3:[0.25, 0.20, 0.55]
+    }
+    return transition_row_a.get(state,"Invalid state")
+
+def state_transition_row_b(state):
+    transition_row_b={
+        1:[0.83, 0.05, 0.12],
+        2:[0.12, 0.72, 0.16],
+        3:[0.06, 0.03, 0.91]
+    }
+    return transition_row_b.get(state,"Invalid state")
+
+def state_transition_row_b_1(state):
+    transition_row_b={
+        1:[0.88, 0.025, 0.095],
+        2:[0.19, 0.65, 0.16],
+        3:[0.08, 0.02, 0.90]
+    }
+    return transition_row_b.get(state,"Invalid state")
+
+def state_transition_row_b_2(state):
+    transition_row_b={
+        1:[0.915, 0.025, 0.06],
+        2:[0.195, 0.66, 0.145],
+        3:[0.1, 0.04, 0.86]
+    }
+    return transition_row_b.get(state,"Invalid state")
+
+def state_transition_row_b_3(state):
+    transition_row_b={
+        1:[0.895, 0.005, 0.04],
+        2:[0.175, 0.64, 0.125],
+        3:[0.095, 0.035, 0.855]
+    }
+    return transition_row_b.get(state,"Invalid state")
+
+def fetch_state_transition_row_chaning(months,state):
+    transition_matrixes={
+    1:state_transition_row_b(state),
+    2:state_transition_row_b(state),
+    3:state_transition_row_b_1(state),
+    4: state_transition_row_b_1(state),
+    5: state_transition_row_b_1(state),
+    6: state_transition_row_b_1(state),
+    7: state_transition_row_b_1(state),
+    8: state_transition_row_b_2(state),
+    9: state_transition_row_b_2(state),
+    10: state_transition_row_b_3(state),
+    11: state_transition_row_b_3(state),
+    12: state_transition_row_b_3(state),
+    }
+    return transition_matrixes.get(months, "Invalid state")
+
+
+if __name__ == '__main__':
+
+    Task1:
+    for y in range(5):
+        #Array of states first state is beginning state, will consist of 51 states in total(for 50 transitions)
+        state_list = [2]
+
+        #state_row = state_transition_row(3)
+        for x in range(50):
+            # Take the last state known from the state list
+            transition_row = state_transition_row_a(state_list[-1])
+            new_state = np.random.multinomial(1, transition_row)
+            # Cast type of numpy array to a pythonic list so that index method works
+            new_state = new_state.tolist()
+            # find first element that has value 1 and add 1 so that it matches state "number"
+            ind = new_state.index(1) + 1
+            # Add the state to the state list
+            state_list.append(ind)
+            pass
+
+
+        fig, ax = plt.subplots()
+        ax.plot(state_list)
+        locs, labels = plt.yticks()  # Get the current locations and labels.
+        plt.yticks(np.arange(1, 4, step=1))
+        locs, labels = plt.xticks()  # Get the current locations and labels.
+        plt.xticks(np.arange(1, 51, step=1))
+        ax.set(xlabel='iteration(n)', ylabel='state',
+               title='Task1 plot')
+        ax.grid()
+        plt.show()
+
+
+    #Task 2a):
+    state = [[7400000,8370000,7900000]]
+    for x in range(12):
+        #Fetch the last month:
+        current_state = state[-1]
+
+        #Grab "populations" from current month:
+        danone_population = current_state[0]
+        mlekovita_population = current_state[1]
+        zott_population = current_state[2]
+
+        # Fetch data that defines how do they move around:
+        transition_row_Danone = state_transition_row_b(1)
+        transition_row_Mlekovita = state_transition_row_b(2)
+        transition_row_Zott = state_transition_row_b(3)
+
+        # Let them choose what they want...:
+        new_state_d = np.random.multinomial(danone_population, transition_row_Danone)
+        new_state_m = np.random.multinomial(mlekovita_population, transition_row_Mlekovita)
+        new_state_z = np.random.multinomial(zott_population, transition_row_Zott)
+
+        #Define new state:
+        new_state = new_state_z + new_state_d + new_state_m
+        # Add a month to the list:
+        state.append(new_state)
+
+    danone,mlekovita,zott = zip(*state)
+
+    fig, ax = plt.subplots()
+    ax.plot(danone,'b')
+    ax.plot(mlekovita,'r')
+    ax.plot(zott,'g')
+    locs, labels = plt.xticks()  # Get the current locations and labels.
+    plt.xticks(np.arange(0, 13, step=1))
+    plt.yticks(np.arange(2000000, 15000000, step=1000000))
+    #plt.yticks(np.arange(1, 12, step=1))
+    ax.set(xlabel='iteration(i)', ylabel='number of clients(n)',
+           title='Task2a) plot')
+    plt.legend(["danone", "mlekovita","zott"], loc ="upper left")
+    ax.grid()
+    plt.show()
+
+
+    Companies = ('Danone', 'Mlekovita', 'Zott')
+    y_pos = np.arange(len(Companies))
+    clients = state[6]
+    plt.bar(y_pos, clients, align='center', alpha=1)
+    plt.xticks(y_pos, Companies)
+    plt.ylabel('Clients')
+    plt.title('Clients after half a year')
+
+    plt.show()
+
+    # Task 2b):
+    state = [[7400000, 8370000, 7900000]]
+    for x in range(12):
+        # Fetch the last month:
+        current_state = state[-1]
+
+        # Grab "populations" from current month:
+        danone_population = current_state[0]
+        mlekovita_population = current_state[1]
+        zott_population = current_state[2]
+
+        # Fetch data that defines how do they move around:
+        transition_row_Danone = fetch_state_transition_row_chaning(len(state),1)
+        transition_row_Mlekovita = fetch_state_transition_row_chaning(len(state),2)
+        transition_row_Zott = fetch_state_transition_row_chaning(len(state),3)
+
+        # Let them choose what they want...:
+        new_state_d = np.random.multinomial(danone_population, transition_row_Danone)
+        new_state_m = np.random.multinomial(mlekovita_population, transition_row_Mlekovita)
+        new_state_z = np.random.multinomial(zott_population, transition_row_Zott)
+
+        # Define new state:
+        new_state = new_state_z + new_state_d + new_state_m
+        # Add a month to the list:
+        state.append(new_state)
+
+    danone, mlekovita, zott = zip(*state)
+
+    fig, ax = plt.subplots()
+    ax.plot(danone,'b')
+    ax.plot(mlekovita,'r')
+    ax.plot(zott,'g')
+    locs, labels = plt.xticks()  # Get the current locations and labels.
+    plt.xticks(np.arange(0, 13, step=1))
+    plt.yticks(np.arange(2000000, 15000000, step=1000000))
+    #plt.yticks(np.arange(1, 12, step=1))
+    ax.set(xlabel='iteration(i)', ylabel='number of clients(n)',
+           title='Task2b) plot')
+    plt.legend(["danone", "mlekovita","zott"], loc ="upper left")
+    ax.grid()
+    plt.show()
+
+    Companies = ('Danone', 'Mlekovita', 'Zott')
+    y_pos = np.arange(len(Companies))
+    clients = state[0]
+    plt.bar(y_pos, clients, align='center', alpha=1, color=["blue","red","green"])
+    plt.xticks(y_pos, Companies)
+    plt.ylabel('Clients')
+    plt.title('Clients in the beginning')
+
+    plt.show()
+\end{lstlisting}
+
+\end{document}
+%
